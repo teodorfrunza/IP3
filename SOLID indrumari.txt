@@ -1,0 +1,92 @@
+SOLID
+S-fiecare obiect ar trebui sa aiba o singura responsabilitate si 
+toate serviciile ar trebui sa aiba legatura cu acea responsabilitate
+
+-nu ar trebui sa fie mai mult de un motiv pt ca o clasa sa se schimbe
+
+-cuplaj mic si coesiune puternica
+
+
+Interdictii:
+-obiectele care isi dau print singure
+-obiecte care se salveaza/isi dau restore singure
+
+Solutii clasice:
+-separare print && separare salvari
+
+
+Solutii:
+-mai multe interfete mai mici
+-mai multe clase mici
+-responsabilitati distincte
+
+
+
+O-deschis la extensie/inchis la modificare
+-deschis la extensie/ comportomanet nou poate fi adaugata in viitor
+-closed- modificari la codul sursa nu sunt necesare
+
+-folosim clase abstracte/interfete/parametri/mostenire/compozitie
+
+
+interdictii:
+-fiecare schimbare necesita retestare (posibile buguri)
+-logica depinde de statement-uri conditionale
+
+solutii clasice:
+-clase noi (nimic nu depinde de ele)
+-clase noi (no legacy coupling)
+
+
+L- clasele copii trebuie doar sa extinda clasele parinte, 
+nu sa schimbe functionalitatea acestora daca ar fi inlocuite cu ele
+clasele copil: -nu ar trebui sa stearga comportamentul clasei de baza
+			   -Violate base class invariants
+			   
+-polimorfismul strica asteptarile codului client
+-fixare: adaugare if-then-nightmare (OCP)
+
+Interdictii:
+-type checking for different methods
+-metoda suprascrisa nu este implementata
+-metode virtuale in constructor
+
+Solutii:
+-don't ask for types and tell the object what to doar
+-refactorizare clasa de baza
+
+
+
+I - un client nu ar trebui sa depinda de metodele pe care nu le foloseste
+
+imparte interfete "grase" (mari) in altele mai mici
+-grase inseamna: clasele cu metode nefolosite, cuplaj crescut, flexibilitate redusa
+
+
+interdictii:
+-metode neimplementate
+-folosirea doar a unei mici portiuni din clasa
+
+
+solutii:
+-interfate mici
+-interfate coesive
+-interfete focusate
+-lasa clientul sa defineasca interfetele
+
+
+D- modulele de nivel inalt nu trebuie sa depinda de modulele 
+de nivel scazut. ambele ar trebui sa depinda de abstractii
+ - abstractiile nu trebuie sa depinda de detalii, ci invers
+ 
+ 
+ -clasele ar trebui sa declare ceea ce au nevoie
+ 
+ 
+ Interdictii:
+ -folosirea keyword-ului new in implementarea metodelor statice
+
+ 
+ 
+
+

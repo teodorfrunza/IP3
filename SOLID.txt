@@ -1,0 +1,31 @@
+Single Responsibility Principle:
+-clasa notificare are o singura responabilitate si anume sa se ocupe de gestionarea notificarilor
+-clasa primarie se ocupa cu notificarea userilor
+-clasa user reprezinta un utilizator care poate beneficia de notificari
+-exista cuplaj mic si coesiune puternica intre clasele primarie,user,notificare
+-nu exista obiecte care isi dau print/save/restore singure
+
+
+Open/Closed Principle:
+-codul poate fi extins in viitor prin clase abstracte, interfete, parametri, mostenire, compozitie
+-modificari la codul sursa nu sunt necesare deoarece codul sursa poate fi extins fara a fi modificat
+
+
+Liskov Substitution:
+-in mod normal clasele copii ar trebui doar sa extinda functionalitatea claselor pe care le mostenesc, numai ca nu exista clase care sa mosteneasca alte clase
+
+
+Interface Segregation Principle:
+-clientii nu sunt obligati sa foloseasca metode de care nu au nevoie
+-nu exista clase cu metode nefolosite, neimplementate
+-100% din codul scris este utilizat
+
+
+Dependency Inversion:
+-in cazul aparitiei unui bug nu este necesara modificarea intregului cod
+-fiecare clasa isi declara tot ceea ce foloseste
+-nu folosim keyword-ul "new" in implementarea vreunei metode statice
+
+
+
+
