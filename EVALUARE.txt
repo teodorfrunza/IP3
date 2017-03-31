@@ -1,0 +1,25 @@
+CUPLAJUL
+
+Clasele Primarie si Notificare sunt conectate. Clasa Primarie este conectata si cu ea insasi.
+Clasa Primarie are cunostinte despre clasa Notificare.
+Clasa Notificare se bazeaza pe clasa Primarie.
+
+Clasa Primarie are cuplaj mare deoarece este conectata cu ea insasi.(jumatate din clasele existente)
+Clasa Notificare are cuplaj mare deoarece depinde de clasa Primarie(singura in afara de ea).
+
+Schimbarile in clasa Notificare nu forteaza schimbari in clasa Primarie.
+O instanta a clasei Primarie apeleaza serviciul generareNotificare din clasa Notificare.
+
+Clasa Notificare este o sublasa a clasei Primarie.
+
+
+COEZIUNEA
+
+Clasa Primarie are o coeziune mare deoarece nu face foarte multe lucruri si responsabilitatile sunt strans legate.
+Clasa Notificare are o coeziune mica deoarece face foarte multe lucruri care nu sunt relationate.
+
+
+
+
+
+
