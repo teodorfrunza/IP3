@@ -56,8 +56,8 @@ public class Notificare
         return this.subject;
     }
 
-    public float lifespan(String startDate,String endDate){
-        
+    public float lifespan(){
+        return this.lifespan;
     }
 
     public void setLifeSpan (float lifeSpan){
