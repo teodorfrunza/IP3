@@ -1,0 +1,85 @@
+
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Duda
+ */
+public class PrimarieTest {
+    
+    public boolean isString( Object foo)
+       {
+               if ( foo instanceof String)
+                    return true;
+               return false;
+       }
+    
+    public boolean isNumber( Object foo)
+       {
+               if ( foo instanceof Number)
+                    return true;
+               return false;
+       }
+    
+    public boolean isBoolean( Object foo)
+       {
+               if ( foo instanceof Boolean)
+                    return true;
+               return false;
+       }
+    
+    Primarie primarie;
+    
+    @BeforeEach
+    public void setUp() {
+        primarie = new Primarie();
+        
+    }
+    
+    @AfterEach
+    public void tearDown() {
+        primarie = NULL;
+    }
+    
+    @Test
+    public void string_name_should_be_string(){
+        AssertTrue(Primarie.isString('Primaria Municipiului Iasi'));
+    }
+    
+    @Test
+    public void non_string_name_should_not_be_string(){
+        AssertFalse(Primarie.isString(132));
+    }
+    
+    @Test
+    public void number_id_should_be_number(){
+        AssertTrue(Primarie.isNumber(3211));
+    }
+    
+    @Test
+    public void non_number_should_not_be_number(){
+        AssertFalse(Primarie.isNumber('notanumber'));
+    }
+    
+    @Test
+    public void notif_should_have_right_subject_mesaj_data_priority(){
+        AssertTrue(Primarie.isString('Primaria Municipiului Iasi'));
+        AssertTrue(Primarie.isString('Inundatie.'));
+        AssertTrue(Primarie.isString('12.02.2016'));
+        AssertTrue(Primarie.isBoolean(0));
+    }
+    
+    @Test
+    public void wrong_notif_should_have_wrong_parameters(){
+        AssertFalse(primarie.subject == '' || primarie.mesaj == '' || primarie.data == '' || primarie.priority != 0 || primarie.priority != 1);
+        AssertFalse(Primarie.isString(21));
+        AssertFalse(Primarie.isBoolean('notboolean'));
+    }
+
+}
