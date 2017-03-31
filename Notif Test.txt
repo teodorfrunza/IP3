@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Duda
+ */
+public class NotificareTest {
+    
+    Notificare notif;
+    
+    @BeforeEach
+    public void setUp() {
+        notif = new Notificare();
+    }
+    
+    @AfterEach
+    public void tearDown() {
+        notif = NULL;
+    }
+    
+    @Test
+    public void edit_parameters_should_be_right(){
+        AssertTrue(notif.subject != '' && notif.mesaj != '' && notif.data != '' && (notif.priority == 0 || notif.priority == 1));
+        AssertTrue(Notificare.isString('Primaria Municipiului Suceava'));
+        AssertTrue(Notificare.isBoolean(1));
+    }
+    
+}
