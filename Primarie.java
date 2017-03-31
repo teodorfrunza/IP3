@@ -14,8 +14,9 @@ import java.util.Vector;
 public class Primarie {
     private String Nume;
     private int IDPrimarie;
-    private ArrayList<Notificare> myNotificare=new ArrayList();
+    private ArrayList<Notificare> myNotificare = new ArrayList();
     private static Primarie primarie = new Primarie();
+    private ArrayList<User> myUsers=new ArrayList<>();
 
     private Primarie() {
     }
@@ -56,5 +57,34 @@ public class Primarie {
         }
     }
 
+    public String getName() {
+        return this.Nume;
+    }
+
+    public User generateUser(String nume, int id, float request, String subject) {
+        try {
+            if (!nume.equals(null) && id >= 0 && id <= 999 && request != 0 && !subject.equals(null)) {
+                User user=new User(nume, id, request, subject);
+                myUsers.add(user);
+                return user;
+            }
+            else throw new InvalidParameterSpecException("One of parameters invalid");
+        } catch (InvalidParameterSpecException e) {
+            e.printStackTrace();
+        }
+        return (User) null;
+    }
+
+    public void deleteUser(User user){
+        myUsers.remove(user);
+    }
+
+    public void deleteNotify(Notificare notificare){
+        myNotificare.remove(notificare);
+    }
+
 
 }
+
+
+
