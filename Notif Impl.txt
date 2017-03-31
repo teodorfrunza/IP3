@@ -1,0 +1,53 @@
+import java.security.spec.InvalidParameterSpecException;
+
+public class Notificare
+{
+
+    private String subject;
+    private String mesaj;
+    private String data;
+    private Boolean priority;
+    private Primarie expeditor;
+
+    public Notificare(String subject,String mesaj,String data,Boolean priority,Primarie expeditor )
+    {
+        try {
+            if (!subject.equals(null) && !mesaj.equals(null) && !data.equals(null) && !priority.equals(null)) {
+                this.subject=subject;
+                this.mesaj=mesaj;
+                this.data=data;
+                this.priority=priority;
+                this.expeditor=expeditor;
+            } else throw new InvalidParameterSpecException("One of parameters invalid");
+        } catch (InvalidParameterSpecException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editNotif(String subject,String mesaj,String data,Boolean priority,Primarie expeditor)
+    {
+        try {
+            if (!subject.equals(null) && !mesaj.equals(null) && !data.equals(null) && !priority.equals(null)) {
+                this.subject=subject;
+                this.mesaj=mesaj;
+                this.data=data;
+                this.priority=priority;
+                this.expeditor=expeditor;
+            } else throw new InvalidParameterSpecException("One of parameters invalid");
+        } catch (InvalidParameterSpecException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void postNotif()
+    {
+        System.out.println(this.subject+" "+this.mesaj+" "+this.data+" "+this.expeditor.getName());
+    }
+
+    private String getSubject()
+    {
+        return this.subject;
+    }
+
+
+}
