@@ -45,7 +45,7 @@ public class Primarie {
     }
 
 
-    public void generateNotif(String subject, String mesaj, String data, String priority) {
+    public void generateNotif(String subject, String mesaj, String data, Boolean priority) {
         try {
             if (!subject.equals(null) && !mesaj.equals(null) && !data.equals(null) && !priority.equals(null)) {
                 Notificare notificare = new Notificare(subject, mesaj, data, priority, getInstance());
